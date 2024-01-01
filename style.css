@@ -64,10 +64,11 @@ h1{
 #game_boxs{
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 15px;
+  gap: 5px ;
 }
 
 #game_boxs .word_box, .clicked{
+  padding: 3px 0;
   user-select: none;
   text-align: center;
   font-size: 30px;
@@ -75,8 +76,8 @@ h1{
   background: none;
   outline: none;
   border: none;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
 }
 
 #game_boxs .word_box{
@@ -104,10 +105,16 @@ footer{
 
 
 @media screen and (max-width: 768px) {
+  body{
+    font-size: 62.5%;
+  }
   #game_container{
     width: 100%;
   }
-  #game_boxs .word_box{
+  #game_boxs{
+    gap: 2px 0;
+  }
+  #game_boxs .word_box, .clicked{
     width: 50px;
     height: 50px;
   }
