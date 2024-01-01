@@ -1,0 +1,114 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --main-color: #000408;
+  --primary-color: #ffaa00;
+  --second-color: #fff;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
+
+h1{
+  padding: 15px 0;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.list_of_words_found{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+.list_of_words_found .correct_words{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list_of_words_found .correct_words .correct_word{
+  padding: 5px 15px 10px;
+  margin: 10px 5px 0;
+  background-color: #4f00a8;
+  border-radius: 20px;
+}
+
+#game_container{
+  width: 30%;
+  height: 60vh;
+  /* background-color: var(--second-color); */
+}
+
+#game_boxs{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+}
+
+#game_boxs .word_box, .clicked{
+  user-select: none;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  background: none;
+  outline: none;
+  border: none;
+  width: 45px;
+  height: 45px;
+}
+
+#game_boxs .word_box{
+  cursor: pointer;
+  border: 1px solid #aaa;
+  color: var(--second-color);
+  transition: border .5s ease;
+}
+
+#game_boxs .word_box:hover{
+  border: 1px solid var(--primary-color);
+}
+
+.clicked{
+  /* cursor:inherit; */
+  background-color: var(--primary-color);
+  color: var(--main-color);
+}
+  
+footer{
+  text-align: center;
+  padding: 15px 0;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  #game_container{
+    width: 100%;
+  }
+  #game_boxs .word_box{
+    width: 50px;
+    height: 50px;
+  }
+}
