@@ -7,6 +7,8 @@
 :root{
   --main-color: #000408;
   --primary-color: #ffaa00;
+  --purple-color: #b9002e;
+  --success-color: #009231;
   --second-color: #fff;
 }
 
@@ -28,6 +30,7 @@ h1{
 }
 
 .list_of_words_found{
+  user-select: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,29 +39,30 @@ h1{
   font-weight: bold;
   text-align: center;
   padding: 15px;
+  margin: -20px 0 0;
 }
 
 .underline{
+  text-transform: capitalize;
   text-decoration: underline;
 }
 
-.list_of_words_found .correct_words{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#correct_word{
+  font-size: 22px;
+  color: var(--purple-color);
+  text-decoration: line-through;
 }
 
-.list_of_words_found .correct_words .correct_word{
-  padding: 5px 15px 10px;
-  margin: 10px 5px 0;
-  background-color: #4f00a8;
-  border-radius: 20px;
+.list_of_words_found #word_input{
+  margin: 5px 0 -5px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 #game_container{
+  margin: 0 0 10px;
   width: 30%;
   height: 60vh;
-  /* background-color: var(--second-color); */
 }
 
 #game_boxs{
@@ -67,8 +71,8 @@ h1{
   gap: 5px ;
 }
 
-#game_boxs .word_box, .clicked{
-  padding: 3px 0;
+#game_boxs .word_box, .clicked, .disabled_button{
+  padding: 0 0 5px;
   user-select: none;
   text-align: center;
   font-size: 30px;
@@ -92,13 +96,20 @@ h1{
 }
 
 .clicked{
-  /* cursor:inherit; */
   background-color: var(--primary-color);
   color: var(--main-color);
+}
+
+.disabled_button{
+  border: 1px solid #aaa;
+  background-color: var(--success-color);
+  color: var(--second-color);
+  cursor: not-allowed;
 }
   
 footer{
   text-align: center;
+  margin: 10px 0;
   padding: 15px 0;
 }
 
