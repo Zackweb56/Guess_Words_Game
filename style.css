@@ -13,6 +13,7 @@
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,6 +107,46 @@ h1{
   color: var(--second-color);
   cursor: not-allowed;
 }
+
+.win{
+  display: flex;
+  flex-direction: column;
+}
+
+#show_win{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15% 0 0;
+  display: none;
+  text-align: center;
+  width: 1350px;
+  height: 100vh;
+  background-color: #000408e3;
+}
+
+.win .congrats{
+  margin: 0 0 50px;
+}
+
+.win .restart_button{
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  transition: .5s ease;
+}
+
+.win .restart_button:hover{
+  letter-spacing: 1.8px;
+}
+
+#win_show{
+  display: block;
+}
   
 footer{
   text-align: center;
@@ -128,5 +169,9 @@ footer{
   #game_boxs .word_box, .clicked, .disabled_button{
     width: 50px;
     height: 50px;
+  }
+  #show_win{
+    padding: 50% 0;
+    width: 100%;
   }
 }

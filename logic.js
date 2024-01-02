@@ -72,6 +72,8 @@ const displayAllWords = () => {
 // selected letters and Buttons array
 let selectedLetters = [];
 let selectedButtons = [];
+// show win message
+let winMessage = document.getElementById('show_win');
 // get letter from word box
 const getLetterOfWord = () => {
   let randomLetter = document.querySelectorAll('.word_box');
@@ -108,6 +110,13 @@ const getLetterOfWord = () => {
           selectedButtons.forEach((button) => {
             button.className = 'disabled_button';
             button.disabled = true;
+            // console.log('index select button', selectedButtons.indexOf(button));
+            // console.log('all Letters length', allLetters.length);
+            if(selectedButtons.indexOf(button) == allLetters.length - 1) {
+              winMessage.style.display = "block";
+            }else{
+              winMessage.style.display = "none";
+            }
           });
           console.log(`very good the word "${words[i]}" is correct`);
           selectedLetters = [];
@@ -116,6 +125,12 @@ const getLetterOfWord = () => {
     });
   });
 }
+
+// restart the game
+document.getElementById('restart_btn').addEventListener('click', function() {
+  location.reload();
+  winMessage.style.display = "none";
+});
 
 // call functions
 // display all word should to found
