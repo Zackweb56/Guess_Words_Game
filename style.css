@@ -125,7 +125,7 @@ footer{
   #game_boxs{
     gap: 2px 0;
   }
-  #game_boxs .word_box, .clicked{
+  #game_boxs .word_box, .clicked, .disabled_button{
     width: 50px;
     height: 50px;
   }
