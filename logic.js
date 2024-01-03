@@ -1,4 +1,4 @@
-const GameName = "Guess Words Game";
+const GameName = "Find Words Game";
 document.title = GameName;
 document.querySelector('.game_title').innerHTML = GameName;
 document.querySelector('.game_footer_span').innerHTML = GameName;
